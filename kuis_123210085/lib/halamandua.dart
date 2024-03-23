@@ -5,8 +5,8 @@ import 'package:kuis_123210085/halamandua.dart';
 import 'package:kuis_123210085/top_album.dart';
 
 class Halamandua extends StatelessWidget {
-  String pesan;
-  Halamandua({Key? key, required this.pesan}) : super(key: key);
+  TopAlbum album;
+  Halamandua({Key? key, required this.album}) : super(key: key);
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,21 +15,19 @@ class Halamandua extends StatelessWidget {
         ),
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
-                children: [Image.network(topAlbumList[0].imageUrls)],
+                children: [Image.network(album.imageUrls)],
               ),
               Row(
-                children: [Text(topAlbumList[0].albumName)],
+                children: [Text(album.albumName)],
               ),
               Row(
-                children: [Text(topAlbumList[0].singer)],
+                children: [Text(album.singer)],
               ),
               Row(
-                children: [
-                  Text(topAlbumList[0].releaseDate),
-                  Text(topAlbumList[0].source)
-                ],
+                children: [Text(album.releaseDate), Text(album.source)],
               )
             ],
           ),
